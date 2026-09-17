@@ -1,0 +1,13 @@
+services:
+  code-server:
+    image: codercom/code-server:latest
+    container_name: code-server
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Paris
+      - PASSWORD=password
+    ports:
+      - 8443:8080
+    volumes:
+      - ./config:/config
+      - /home/lukas/projects:/config/workspace
