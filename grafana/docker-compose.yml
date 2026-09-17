@@ -1,0 +1,13 @@
+services:
+  grafana:
+    container_name: grafana
+    image: grafana/grafana
+    restart: always
+    ports:
+      - 9999:3000
+    networks:
+      - gateflow_network
+
+networks:
+  gateflow_network:
+    external: true
