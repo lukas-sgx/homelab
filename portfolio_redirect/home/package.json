@@ -1,0 +1,23 @@
+{
+  "name": "home",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/lukas-sgx/dispatch#readme",
+  "bugs": {
+    "url": "https://github.com/lukas-sgx/dispatch/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukas-sgx/dispatch.git"
+  },
+  "license": "MIT",
+  "author": "lukas-sgx",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "prod": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
