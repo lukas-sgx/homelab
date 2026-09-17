@@ -1,0 +1,40 @@
+services:
+    traefik:
+        image: traefik:v3.6
+        container_name: traefik
+        command:
+            - "--api.insecure=false"
+            - "--api.dashboard=false"
+            - "--providers.docker=true"
+            - "--providers.docker.exposedbydefault=false"
+            - "--providers.file.directory=/etc/traefik/dynamic"
+            - "--providers.file.watch=true"
+            - "--entrypoints.web.address=:80"
+            - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+            - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+            - "--entrypoints.websecure.address=:443"
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+            - ./traefik/dynamic:/etc/traefik/dynamic
+            - ./traefik/certs:/certs:ro
+        networks:
+            - traefik_network
+
+    homepage:
+        image: ghcr.io/gethomepage/homepage:latest
+        container_name: homepage
+        environment:
+            - HOMEPAGE_ALLOWED_HOSTS=home.labs.internal,labs.internal
+        volumes:
+            - ./home-config:/app/config
+            - ./home-config/images:/app/public/icons:ro
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+        ports:
+            - 8999:3000
+
+networks:
+  traefik_network:
+    driver: bridge

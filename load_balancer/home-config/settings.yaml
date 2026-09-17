@@ -1,0 +1,25 @@
+title: HomeLabs
+theme: dark
+color: slate
+background:
+  image: https://images.alphacoders.com/929/929210.jpg
+  blur: md
+  opacity: 35
+
+cardBlur: xl
+headerStyle: clean
+hideVersion: true
+
+layout:
+  Labs:
+    style: row
+    columns: 4
+    iconsOnly: true
+  Network:
+    style: row
+    columns: 4
+    iconsOnly: true
+  Shortcuts:
+    style: row
+    columns: 4
+    iconsOnly: true

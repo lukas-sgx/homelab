@@ -1,0 +1,63 @@
+tls:
+  stores:
+    default:
+      defaultCertificate:
+        certFile: "/certs/local.crt"
+        keyFile: "/certs/local.key"
+http:
+  routers:
+    grafana-router:
+      rule: "Host(`grafana.labs.internal`)"
+      service: grafana-service
+      entryPoints:
+        - websecure
+      tls: {}
+    
+    vscode-router:
+      rule: "Host(`dev.labs.internal`)"
+      service: vscode-service
+      entryPoints:
+        - websecure
+      tls: {}
+    
+    adguard-router:
+      rule: "Host(`adguard.labs.internal`)"
+      service: adguard-service
+      entryPoints:
+        - websecure
+      tls: {}
+
+    homepage-router:
+      rule: "Host(`home.labs.internal`)"
+      service: homepage-service
+      entryPoints:
+        - websecure
+      tls: {}
+
+    root-router:
+      rule: "Host(`labs.internal`)"
+      service: homepage-service
+      entryPoints:
+        - websecure
+      tls: {}
+
+  services:
+    grafana-service:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.1.193:9999"
+
+    adguard-service:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.1.194"
+
+    homepage-service:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.1.193:8999"
+
+    vscode-service:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.1.195:8443"

@@ -1,0 +1,106 @@
+# - Media:
+#     - Plex:
+#         icon: plex.svg
+#         href: http://plex.local:32400
+#         description: Watch movies and TV shows
+#         widget:
+#           type: plex
+#           url: http://plex.local:32400
+#           key: TA_CLE_API_PLEX
+
+#     - Emby:
+#         icon: emby.svg
+#         href: http://emby.local:8096
+#         description: Watch movies and TV shows
+#         widget:
+#           type: emby
+#           url: http://emby.local:8096
+#           key: TA_CLE_API_EMBY
+
+# - Management:
+#     - Overseerr:
+#         icon: overseerr.svg
+#         href: http://overseerr.local:5055
+#         widget:
+#           type: overseerr
+#           url: http://overseerr.local:5055
+#           key: TA_CLE_API_OVERSEERR
+
+#     - Radarr:
+#         icon: radarr.svg
+#         href: http://radarr.local:7878
+#         widget:
+#           type: radarr
+#           url: http://radarr.local:7878
+#           key: TA_CLE_API_RADARR
+
+#     - Sonarr:
+#         icon: sonarr.svg
+#         href: http://sonarr.local:8989
+#         widget:
+#           type: sonarr
+#           url: http://sonarr.local:8989
+#           key: TA_CLE_API_SONARR
+
+# - Infrastructure:
+#     - Proxmox VE:
+#         icon: proxmox.svg
+#         href: https://proxmox.local:8006
+#         widget:
+#           type: proxmox
+#           url: https://proxmox.local:8006
+#           username: root@pam!homepage
+#           password: TON_TOKEN_OU_MOT_DE_PASSE
+
+#     - TrueNAS SCALE:
+#         icon: truenas.svg
+#         href: https://truenas.local
+#         widget:
+#           type: truenas
+#           url: https://truenas.local
+#           key: TA_CLE_API_TRUENAS
+
+#     - Portainer:
+#         icon: portainer.svg
+#         href: https://portainer.local:9443
+#         widget:
+#           type: portainer
+#           url: https://portainer.local:9443
+#           key: TA_CLE_API_PORTAINER
+
+- Network:
+    - AdGuard:
+        icon: adguard-home.svg
+        href: "https://adguard.labs.internal"
+        description: "DNS"
+        siteMonitor: http://192.168.1.194
+    - Cloudflare:
+        icon: cloudflare.svg
+        href: "https://dash.cloudflare.com"
+        description: "Tunnels"
+
+- Shortcuts:
+    - Epitech:
+        icon: /icons/epitech.png
+        href: "https://my.epitech.eu"
+        description: "School"
+    - GitHub:
+        icon: github-light.svg
+        href: "https://github.com/lukas-sgx"
+        description: "lukas-sgx"
+    - Linkedin:
+        icon: linkedin.svg
+        href: "https://www.linkedin.com/in/lukas-soigneux/"
+        description: "Lukas Soigneux"
+
+- Labs:
+    - Grafana:
+        icon: grafana.svg
+        href: "https://grafana.labs.internal"
+        description: "Monitoring"
+        siteMonitor: http://192.168.1.193:9999
+    - Web - IDE:
+        icon: vscode.svg
+        href: "https://dev.labs.internal"
+        description: "vscode"
+        siteMonitor: http://192.168.1.195:8443
